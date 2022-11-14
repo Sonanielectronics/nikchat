@@ -77,7 +77,7 @@ app.get('/api', async (req, res) => {
     
 //     userarray.push(a[i].username);
 
-    res.json(userarray);
+    res.json("Hi");
 
 });
     
