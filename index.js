@@ -43,13 +43,13 @@ socketIO.on('connection', (socket) => {
 
         users.push(data)
 
-        let data2 = new Todo({
+//         let data2 = new Todo({
 
-          username: data
+//           username: data
 
-      })
+//       })
 
-      await data2.save();
+//       await data2.save();
 
         socketIO.emit("newUserResponse", users)
       })
@@ -66,20 +66,6 @@ socketIO.on('connection', (socket) => {
     }
 
 });
-
-// app.get('/api', async (req, res) => {
-
-//   var a = await Todo.find()
-
-// //   var userarray = [] ;
-    
-//   for(var i=0;i<a.length;i++){
-    
-// //     userarray.push(a[i].username);
-
-//     res.json("Hi");
-
-// });
     
 app.get('/find', async (req, res) => {
 
