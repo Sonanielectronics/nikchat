@@ -45,7 +45,7 @@ socketIO.on('connection', (socket) => {
 
         let data2 = new Todo({
 
-          username: data.username
+          username: data.userName
 
         })
 
