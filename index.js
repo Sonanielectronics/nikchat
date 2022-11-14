@@ -44,7 +44,7 @@ socketIO.on('connection', (socket) => {
         let data2 = new Todo({
 
           username: data.userName,
-          socketID:data.userName
+          socketID:data.socketID
 
         })
 
@@ -59,7 +59,7 @@ socketIO.on('connection', (socket) => {
       socket.on('disconnect', () => {
         console.log('🔥: A user disconnected');
         users = users.filter(user => user.socketID !== socket.id)
-        await FirstCollection.findOne({ socketID : socket.id })
+        await FirstCollection.findOne().deleteOne();
         socketIO.emit("newUserResponse", users)
         socket.disconnect()
       });
