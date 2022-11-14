@@ -13,7 +13,6 @@ const rawData = fs.readFileSync('messages.json');
 const messagesData = JSON.parse(rawData);
 
 app.use(cors())
-let users = []
 
 require("./db/conn");
 var Todo = require("./models/schema")
@@ -41,8 +40,6 @@ socketIO.on('connection', (socket) => {
   
       socket.on("newUser", async (data) => {
 
-        users.push(data)
-
         let data2 = new Todo({
 
           username: data.userName,
@@ -51,6 +48,8 @@ socketIO.on('connection', (socket) => {
         })
 
       await data2.save();
+          
+      var users = await Todo.find()
           
         socketIO.emit("newUserResponse", users)
           
