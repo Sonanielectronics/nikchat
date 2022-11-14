@@ -71,7 +71,7 @@ app.get('/api', async (req, res) => {
 
   var a = await Todo.find()
 
-  var userarray = [] ;
+//   var userarray = [] ;
     
   for(var i=0;i<a.length;i++){
     
