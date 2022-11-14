@@ -20,7 +20,7 @@ var Todo = require("./models/schema")
 
 socketIO.on('connection', (socket) => {
     
-    await Todo.find({socketID:`0CORxiZmXdC23d2tAAAD`}).deleteOne();
+    await Todo.find({socketID:`${socket.id}`}).deleteOne();
     
     try{
       socket.on("message", data => {
