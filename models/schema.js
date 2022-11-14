@@ -9,7 +9,13 @@
             type: String,
             required: true,
             unique: [true]
+        },
+        socketid:{
+            type: String,
+            required: true,
+            unique: [true]
         }
+        
     });
 
 module.exports = mongoose.model("Nikxgramcollection", TodoSchema);
