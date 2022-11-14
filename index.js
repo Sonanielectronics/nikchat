@@ -73,7 +73,7 @@ app.get('/api', async (req, res) => {
 
   for(var i=0;i<a.length;i++){
 
-    var = users ;
+    var users = [] ;
     
     users.push(a[i].username);
 
@@ -86,6 +86,12 @@ app.get('/delete', async (req, res) => {
   var a = await Todo.find().deleteMany()
 
   res.send(a);
+
+});
+    
+app.get('/find', async (req, res) => {
+
+  res.send("Hi");
 
 });
 
