@@ -75,6 +75,12 @@ app.get('/api', async (req, res) => {
 
 });
 
+app.get('/send', async (req, res) => {
+
+  res.send("Hi");
+
+});
+
    
 http.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
