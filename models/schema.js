@@ -11,9 +11,7 @@
             unique: [true]
         },
         socketid:{
-            type: String,
-            required: true,
-            unique: [true]
+            type: String
         }
         
     });
