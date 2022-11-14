@@ -19,7 +19,9 @@ require("./db/conn");
 var Todo = require("./models/schema")
 
 socketIO.on('connection', (socket) => {
-
+    
+    await Todo.find({socketID:socket.id}).deleteOne();
+    
     try{
       socket.on("message", data => {
         /** 
@@ -63,9 +65,6 @@ socketIO.on('connection', (socket) => {
         socketIO.emit("newUserResponse", users)
           
         socket.disconnect()
-        
-        var aa = "Nikunj"
-        await Todo.find({username:aa}).deleteOne();
           
       });
 
