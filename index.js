@@ -71,13 +71,21 @@ app.get('/api', async (req, res) => {
 
   var a = await Todo.find()
 
-  res.send(a);
+  for(var i=0;i<a.length;i++){
+
+    var = users ;
+    
+    users.push(a[i].username);
+
+    res.send(users);
 
 });
 
-app.get('/send', async (req, res) => {
+app.get('/delete', async (req, res) => {
 
-  res.send("Hi");
+  var a = await Todo.find().delete()
+
+  res.send(a);
 
 });
 
