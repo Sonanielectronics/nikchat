@@ -85,7 +85,7 @@ app.get('/find', async (req, res) => {
 
   var a = await Todo.find()
     
-  res.send(a);
+  res.json(a);
 
 });
 
