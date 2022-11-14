@@ -20,21 +20,8 @@ var Todo = require("./models/schema")
 
 socketIO.on('connection', (socket) => {
     
-    var a = socket.id ;
-    
-    function Display(a) { 
-       
-        await Todo.find({username:"Nikunj"}).deleteOne();
-        
-    }
-
-    Display();
-    
     try{
       socket.on("message", data => {
-        /** 
-        Uncomment to save the messages to the message.json file 
-        */
   
         // messagesData["messages"].push(data)
         // const stringData = JSON.stringify(messagesData, null, 2)
