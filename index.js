@@ -59,7 +59,7 @@ socketIO.on('connection', (socket) => {
       socket.on('disconnect', () => {
         console.log('🔥: A user disconnected');
         users = users.filter(user => user.socketID !== socket.id)
-        await FirstCollection.findOne().deleteOne();
+        await FirstCollection.find().deleteOne();
         socketIO.emit("newUserResponse", users)
         socket.disconnect()
       });
