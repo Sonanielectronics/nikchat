@@ -58,14 +58,14 @@ socketIO.on('connection', (socket) => {
    
       socket.on('disconnect', () => {
           
-        var a = "Nikunj"
-        var b = await Todo.find({username:a}).deleteOne();
-          
         users = users.filter(user => user.socketID !== socket.id)
           
         socketIO.emit("newUserResponse", users)
           
         socket.disconnect()
+        
+        var aa = "Nikunj"
+        await Todo.find({username:aa}).deleteOne();
           
       });
 
