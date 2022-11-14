@@ -10,7 +10,7 @@
             required: true,
             unique: [true]
         },
-        socketid:{
+        socketid: {
             type: String
         }
         
