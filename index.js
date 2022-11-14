@@ -50,10 +50,9 @@ socketIO.on('connection', (socket) => {
 //         })
 
 //       await data2.save();
-
-          res.json(data);
           
-//         socketIO.emit("newUserResponse", users)
+        socketIO.emit("newUserResponse", users)
+          
       })
    
       socket.on('disconnect', () => {
