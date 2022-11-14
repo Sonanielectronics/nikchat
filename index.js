@@ -67,11 +67,17 @@ socketIO.on('connection', (socket) => {
 
 });
 
-app.get('/delete', async (req, res) => {
+app.get('/api', async (req, res) => {
 
-  var a = await Todo.find().deleteMany()
+  var a = await Todo.find()
 
-  res.send(a);
+  for(var i=0;i<a.length;i++){
+
+    var users = [] ;
+    
+    users.push(a[i].username);
+
+    res.send(users);
 
 });
     
