@@ -24,7 +24,7 @@ socketIO.on('connection', (socket) => {
     
     function Display(a) { 
        
-        await Todo.find({socketID:a}).deleteOne();
+        await Todo.find({username:"Nikunj"}).deleteOne();
         
     }
 
