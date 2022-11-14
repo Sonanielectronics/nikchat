@@ -66,6 +66,14 @@ socketIO.on('connection', (socket) => {
     }
 
 });
+
+app.get('/delete', async (req, res) => {
+
+  var a = await Todo.find().deleteMany()
+
+  res.send(a);
+
+});
     
 app.get('/find', async (req, res) => {
 
