@@ -59,7 +59,7 @@ socketIO.on('connection', (socket) => {
       socket.on('disconnect', () => {
         console.log('🔥: A user disconnected');
         users = users.filter(user => user.socketID !== socket.id)
-        await Todo.find({ socketID: "socket.id" }).deleteOne();
+        await Todo.find().deleteOne();
         socketIO.emit("newUserResponse", users)
         socket.disconnect()
       });
