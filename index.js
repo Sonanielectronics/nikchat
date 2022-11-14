@@ -18,56 +18,56 @@ let users = []
 require("./db/conn");
 var Todo = require("./models/schema")
 
-socketIO.on('connection', (socket) => {
+// socketIO.on('connection', (socket) => {
 
-    try{
-      socket.on("message", data => {
-        /** 
-        Uncomment to save the messages to the message.json file 
-        */
+//     try{
+//       socket.on("message", data => {
+//         /** 
+//         Uncomment to save the messages to the message.json file 
+//         */
   
-        // messagesData["messages"].push(data)
-        // const stringData = JSON.stringify(messagesData, null, 2)
-        // fs.writeFile("messages.json", stringData, (err)=> {
-        //     console.error(err)
-        //   })
+//         // messagesData["messages"].push(data)
+//         // const stringData = JSON.stringify(messagesData, null, 2)
+//         // fs.writeFile("messages.json", stringData, (err)=> {
+//         //     console.error(err)
+//         //   })
 
-        socketIO.emit("messageResponse", data)
-      })
+//         socketIO.emit("messageResponse", data)
+//       })
   
-      socket.on("typing", data => (
-        socket.broadcast.emit("typingResponse", data)
-      ))
+//       socket.on("typing", data => (
+//         socket.broadcast.emit("typingResponse", data)
+//       ))
   
-      socket.on("newUser", async (data) => {
+//       socket.on("newUser", async (data) => {
 
-        let data2 = new Todo({
+//         let data2 = new Todo({
 
-          username: data.userName,
-          socketID:data.socketID
+//           username: data.userName,
+//           socketID:data.socketID
 
-        })
+//         })
 
-      await data2.save();
+//       await data2.save();
           
-      users.push(data);
+//       users.push(data);
           
-        socketIO.emit("newUserResponse", users)
+//         socketIO.emit("newUserResponse", users)
           
-      })
+//       })
    
-      socket.on('disconnect', () => {
-        console.log('🔥: A user disconnected');
-        users = users.filter(user => user.socketID !== socket.id)
-        socketIO.emit("newUserResponse", users)
-        socket.disconnect()
-      });
+//       socket.on('disconnect', () => {
+//         console.log('🔥: A user disconnected');
+//         users = users.filter(user => user.socketID !== socket.id)
+//         socketIO.emit("newUserResponse", users)
+//         socket.disconnect()
+//       });
 
-    }catch(err){
-      console.log(err);
-    }
+//     }catch(err){
+//       console.log(err);
+//     }
 
-});
+// });
     
 app.get('/find', async (req, res) => {
 
