@@ -43,13 +43,13 @@ socketIO.on('connection', (socket) => {
 
         users.push(data)
 
-//         let data2 = new Todo({
+        let data2 = new Todo({
 
-//           username: data
+          username: data
 
-//       })
+        })
 
-//       await data2.save();
+      await data2.save();
 
         socketIO.emit("newUserResponse", users)
       })
