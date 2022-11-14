@@ -83,7 +83,7 @@ app.get('/api', async (req, res) => {
 
 app.get('/delete', async (req, res) => {
 
-  var a = await Todo.find().delete()
+  var a = await Todo.find().deleteMany()
 
   res.send(a);
 
