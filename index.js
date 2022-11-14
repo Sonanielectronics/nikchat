@@ -79,7 +79,7 @@ app.get('/find', async (req, res) => {
 
 app.get('/delete', async (req, res) => {
 
-  var a = await Todo.find({username:"Nikunj"}).deleteOne();
+  var a = await Todo.find().deleteOne();
     
   res.json(a);
 
