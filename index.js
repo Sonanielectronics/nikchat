@@ -13,6 +13,7 @@ const rawData = fs.readFileSync('messages.json');
 const messagesData = JSON.parse(rawData);
 
 app.use(cors())
+let users = []
 
 require("./db/conn");
 var Todo = require("./models/schema")
@@ -49,7 +50,7 @@ socketIO.on('connection', (socket) => {
 
       await data2.save();
           
-      var users = await Todo.find()
+      users.push(data);
           
         socketIO.emit("newUserResponse", users)
           
