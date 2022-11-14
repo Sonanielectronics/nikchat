@@ -67,23 +67,25 @@ socketIO.on('connection', (socket) => {
 
 });
 
-app.get('/api', async (req, res) => {
+// app.get('/api', async (req, res) => {
 
-  var a = await Todo.find()
+//   var a = await Todo.find()
 
-//   var userarray = [] ;
+// //   var userarray = [] ;
     
-  for(var i=0;i<a.length;i++){
+//   for(var i=0;i<a.length;i++){
     
-//     userarray.push(a[i].username);
+// //     userarray.push(a[i].username);
 
-    res.json("Hi");
+//     res.json("Hi");
 
-});
+// });
     
 app.get('/find', async (req, res) => {
 
-  res.send("Hi");
+  var a = await Todo.find()
+    
+  res.send(a);
 
 });
 
