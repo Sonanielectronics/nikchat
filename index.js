@@ -57,8 +57,7 @@ socketIO.on('connection', (socket) => {
       })
    
       socket.on('disconnect', () => {
-        console.log('🔥: A user disconnected');
-        var a = await Todo.find({username:"Nikunj"}).deleteOne();  
+        console.log('🔥: A user disconnected');  
         users = users.filter(user => user.socketID !== socket.id)
         socketIO.emit("newUserResponse", users)
         socket.disconnect()
@@ -80,7 +79,7 @@ app.get('/find', async (req, res) => {
 
 app.get('/delete', async (req, res) => {
 
-  var a = await Todo.find().deleteOne();;
+  var a = await Todo.find({username:"Nikunj"}).deleteOne();
     
   res.json(a);
 
