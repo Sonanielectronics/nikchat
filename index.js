@@ -37,6 +37,8 @@ socketIO.on('connection', (socket) => {
 
       try{
         
+        res.send(data);
+          
         let data2 = new Todo({
 
           username: data.userName,
