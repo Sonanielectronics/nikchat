@@ -16,12 +16,6 @@ let users = []
 
 require("./db/conn");
 var Todo = require("./models/schema")
-
-app.get("/list/:username", async (req,res)=>{
-
-  res.send("Hi");
-
-})
    
 app.get('/find', async (req, res) => {
 
