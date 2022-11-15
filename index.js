@@ -14,10 +14,6 @@ const fs = require('fs');
 app.use(cors())
 let users = []
 
-var cookieParser = require('cookie-parser');
-app.use(cookieParser());
-const cookie = require("cookie");
-
 require("./db/conn");
 var Todo = require("./models/schema")
 
