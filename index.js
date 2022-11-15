@@ -19,40 +19,46 @@ var Todo = require("./models/schema")
 
 app.get("/list/:username", async (req,res)=>{
 
-  res.send(document.visibilityState);
+  res.send("Hi");
 
 })
+
+// app.get("/list/:username", async (req,res)=>{
+
+//   res.send(document.visibilityState);
+
+// })
    
-app.get('/find', async (req, res) => {
+// app.get('/find', async (req, res) => {
 
-  var a = await Todo.find()
+//   var a = await Todo.find()
     
-  res.json(a);
+//   res.json(a);
 
-});
+// });
 
-app.get('/delete', async (req, res) => {
+// app.get('/delete', async (req, res) => {
 
-  var b = await Todo.find().deleteOne();
+//   var b = await Todo.find().deleteOne();
     
-  res.json(b);
+//   res.json(b);
 
-});
+// });
 
-app.get('/add', async (req, res) => {
+// app.get('/add', async (req, res) => {
 
-  let data3 = new Todo({
+//   let data3 = new Todo({
 
-    username: "Ghoghari",
-    socketID:0
+//     username: "Ghoghari",
+//     socketID:0
 
-  })
+//   })
 
-await data3.save();
+// await data3.save();
 
-res.send("data added");
+// res.send("data added");
 
-});
+// });
 
 http.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
