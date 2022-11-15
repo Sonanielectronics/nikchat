@@ -2,10 +2,10 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const http = require('http').Server(app);
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 const socketIO = require('socket.io')(http, {
     cors: {
-        origin: "http://localhost:3000"
+        origin: "https://nikchat2.herokuapp.com"
     },
     cookie: true
 });
